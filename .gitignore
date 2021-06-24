@@ -2,3 +2,4 @@ node_modules
 Anotations.md
 *.lock
 *.sqlite
+.env
