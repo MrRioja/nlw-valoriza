@@ -1,4 +1,5 @@
 import { v4 as uuid } from "uuid";
+import { Exclude } from "class-transformer";
 import {
   Column,
   CreateDateColumn,
@@ -18,6 +19,7 @@ class User {
   @Column()
   email: string;
 
+  @Exclude()
   @Column()
   password: string;
 
