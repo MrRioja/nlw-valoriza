@@ -3,3 +3,4 @@ Anotations.md
 *.lock
 *.sqlite
 .env
+uploads
