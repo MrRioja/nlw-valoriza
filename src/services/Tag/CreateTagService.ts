@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
-import AppError from "../errors/AppError";
-import { TagsRepositories } from "../repositories/TagsRepositories";
+import AppError from "../../errors/AppError";
+import { TagsRepositories } from "../../repositories/TagsRepositories";
 
 class CreateTagService {
   async execute(name: string, icon?: string) {

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { CreateUserService } from "../services/CreateUserService";
-import { stringToBoolean } from "../utils/stringToBoolean";
+import { CreateUserService } from "../../services/User/CreateUserService";
+import { stringToBoolean } from "../../utils/stringToBoolean";
 
 class CreateUserController {
   async handle(req: Request, res: Response) {

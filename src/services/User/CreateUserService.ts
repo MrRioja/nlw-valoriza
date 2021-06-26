@@ -1,7 +1,7 @@
 import { getCustomRepository } from "typeorm";
-import { UsersRepositories } from "../repositories/UsersRepositories";
+import { UsersRepositories } from "../../repositories/UsersRepositories";
 import { hash } from "bcryptjs";
-import AppError from "../errors/AppError";
+import AppError from "../../errors/AppError";
 
 interface IUserRequest {
   name: string;

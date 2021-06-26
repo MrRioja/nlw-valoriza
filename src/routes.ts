@@ -8,14 +8,14 @@ const upload = multer(uploadConfig);
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
 
-import { ListTagsController } from "./controllers/ListTagsController";
-import { CreateTagController } from "./controllers/CreateTagController";
-import { CreateUserController } from "./controllers/CreateUserController";
-import { AuthenticateUserController } from "./controllers/AuthenticateUserController";
-import { CreateComplimentController } from "./controllers/CreateComplimentController";
-import { ListUserReceiveComplimentsController } from "./controllers/ListUserReceiveComplimentsController";
-import { ListUserSendComplimentsController } from "./controllers/ListUserSendComplimentsController";
-import { ListUsersController } from "./controllers/ListUsersController";
+import { ListTagsController } from "./controllers/Tag/ListTagsController";
+import { CreateTagController } from "./controllers/Tag/CreateTagController";
+import { CreateUserController } from "./controllers/User/CreateUserController";
+import { AuthenticateUserController } from "./controllers/User/AuthenticateUserController";
+import { CreateComplimentController } from "./controllers/Compliments/CreateComplimentController";
+import { ListUserReceiveComplimentsController } from "./controllers/Compliments/ListUserReceiveComplimentsController";
+import { ListUserSendComplimentsController } from "./controllers/Compliments/ListUserSendComplimentsController";
+import { ListUsersController } from "./controllers/User/ListUsersController";
 
 const createTagController = new CreateTagController();
 const createUserController = new CreateUserController();
