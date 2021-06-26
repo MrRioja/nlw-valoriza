@@ -1,5 +1,9 @@
 import { Router } from "express";
+import multer from "multer";
 const routes = Router();
+
+import uploadConfig from "./config/upload";
+const upload = multer(uploadConfig);
 
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
@@ -28,9 +32,10 @@ routes.post(
   "/tags",
   ensureAuthenticated,
   ensureAdmin,
+  upload.array("icon"),
   createTagController.handle
 );
-routes.post("/users", createUserController.handle);
+routes.post("/users", upload.array("avatar"), createUserController.handle);
 routes.post("/login", authenticateUserController.handle);
 routes.post(
   "/compliments",
