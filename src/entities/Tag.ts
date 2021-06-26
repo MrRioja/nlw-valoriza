@@ -15,6 +15,9 @@ class Tag {
   @Column()
   name: string;
 
+  @Column({ nullable: true })
+  icon: string;
+
   @CreateDateColumn()
   created_at: Date;
 

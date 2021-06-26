@@ -3,7 +3,7 @@ import AppError from "../errors/AppError";
 import { TagsRepositories } from "../repositories/TagsRepositories";
 
 class CreateTagService {
-  async execute(name: string) {
+  async execute(name: string, icon?: string) {
     const tagsRepository = getCustomRepository(TagsRepositories);
 
     if (!name) {
@@ -16,7 +16,7 @@ class CreateTagService {
       throw new AppError("Tag already exists");
     }
 
-    const tag = tagsRepository.create({ name });
+    const tag = tagsRepository.create({ name, icon });
 
     await tagsRepository.save(tag);
 

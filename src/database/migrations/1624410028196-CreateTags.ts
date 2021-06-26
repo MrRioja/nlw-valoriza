@@ -16,6 +16,11 @@ export class CreateTags1624410028196 implements MigrationInterface {
             type: "varchar",
           },
           {
+            name: "icon",
+            type: "varchar",
+            isNullable: true,
+          },
+          {
             name: "created_at",
             type: "timestamp",
             default: "now()",
