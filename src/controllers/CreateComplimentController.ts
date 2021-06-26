@@ -15,7 +15,7 @@ class CreateComplimentController {
       message,
     });
 
-    return res.json(compliment);
+    return res.status(201).json(compliment);
   }
 }
 

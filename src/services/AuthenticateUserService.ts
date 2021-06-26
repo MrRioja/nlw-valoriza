@@ -3,6 +3,7 @@ import { UsersRepositories } from "../repositories/UsersRepositories";
 
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
+import AppError from "../errors/AppError";
 
 interface IAuthenticateRequest {
   email: string;
@@ -16,13 +17,13 @@ class AuthenticateUserService {
     const user = await usersRepository.findOne({ email });
 
     if (!user) {
-      throw new Error("Email/Password incorrect");
+      throw new AppError("Email/Password incorrect");
     }
 
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new Error("Email/Password incorrect");
+      throw new AppError("Email/Password incorrect");
     }
 
     const token = sign(

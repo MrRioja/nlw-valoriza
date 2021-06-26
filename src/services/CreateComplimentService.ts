@@ -1,4 +1,5 @@
 import { getCustomRepository } from "typeorm";
+import AppError from "../errors/AppError";
 import { ComplimentsRepositories } from "../repositories/ComplimentsRepositories";
 import { UsersRepositories } from "../repositories/UsersRepositories";
 
@@ -24,11 +25,11 @@ class CreateComplimentService {
     const userReceiverExists = await usersRepositories.findOne(user_receiver);
 
     if (user_sender === user_receiver) {
-      throw new Error("Incorrect User Receiver");
+      throw new AppError("Incorrect User Receiver");
     }
 
     if (!userReceiverExists) {
-      throw new Error("User Receiver does not exists");
+      throw new AppError("User Receiver does not exists");
     }
 
     const compliment = complimentsRepositories.create({
